@@ -6,14 +6,15 @@ public class ProblemaTriangulo {
 
 	public static void main(String[] args) {
 
-		double a1, a2, p;
+		double a1, a2;
 		
 		Triangle x, y;
+// Instanciando o Triangulo
 		x = new Triangle();
 		y = new Triangle();
-		
 		Scanner sc = new Scanner(System.in);
-		
+
+// Lendo as variáveis do triangulo
 		System.out.println("Informe os lados do triangulo X: ");
 		x.a = sc.nextDouble();
 		x.b = sc.nextDouble();
@@ -23,14 +24,11 @@ public class ProblemaTriangulo {
 		y.a = sc.nextDouble();
 		y.b = sc.nextDouble();
 		y.c = sc.nextDouble();
-		
-		p = (x.a+x.b+x.c)/2;
-		a1 = Math.sqrt(p*(p-x.a)*(p-x.b)*(p-x.c));
-		
-		
-		p = (y.a+y.b+y.c)/2;
-		a2 = Math.sqrt(p*(p-y.a)*(p-y.b)*(p-y.c));
-		
+
+// Chamando o método de calcular a área (da classe Triangulo)
+		a1 = x.area();
+		a2 = y.area();
+ 		
 		if (a1 > a2) {
 			System.out.printf("Triangle 1 area: %.2f\nTriangle 2 area: %.2f\nLarger area: X", a1, a2);
 		}	else {
